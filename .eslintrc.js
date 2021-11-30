@@ -18,5 +18,6 @@ module.exports = {
     'no-restricted-globals': 0,
     'func-names': 0,
     'no-underscore-dangle': 0,
+    'no-restricted-syntax': 'off',
   },
 };
