@@ -32,4 +32,4 @@ export const getAdults = obj => {
   return overEighteen;
 };
 
-getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 });
+getAdults({ Nik: 19, Tom: 17, Bob: 18 });
