@@ -13,7 +13,3 @@ export function getPlans() {
 export function getGoal() {
   return document.querySelector('.goal').outerHTML;
 }
-getTitle();
-getDescription();
-getPlans();
-getGoal();
