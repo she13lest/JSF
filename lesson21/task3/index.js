@@ -10,3 +10,6 @@ export function getItemArray() {
   console.dir(Array.from(elementsArray));
   return elementsArray;
 }
+
+getItemList();
+getItemArray();
