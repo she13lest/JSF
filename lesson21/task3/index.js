@@ -10,5 +10,5 @@ export function getItemsArray() {
   return elementsArray;
 }
 
-getItemList();
-getItemArray();
+getItemsList();
+getItemsArray();
