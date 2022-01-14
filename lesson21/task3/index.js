@@ -5,9 +5,8 @@ export function getItemList() {
 }
 
 export function getItemArray() {
-  const elementsArray = document.querySelectorAll('.tool');
-
-  console.dir(Array.from(elementsArray));
+  const elementsArray = Array.from(document.querySelectorAll('.tool'));
+  console.dir(elementsArray);
   return elementsArray;
 }
 
