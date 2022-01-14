@@ -5,7 +5,7 @@ export function getTitleElement() {
 }
 
 export function getInputElement() {
-  const inputElem = document.querySelector('inpt[type="text"]');
+  const inputElem = document.querySelector('input[type="text"]');
   console.dir(inputElem);
   return inputElem;
 }
