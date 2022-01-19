@@ -3,10 +3,10 @@ export function manageClasses() {
   one.classList.add('selected');
   const two = document.querySelector('.two');
   two.classList.remove('selected');
-  const thirt = document.querySelector('.three');
-  thirt.classList.toggle('three_done');
-  const fourth = document.querySelector('.four');
-  if (fourth.classList.containes('.some-class')) {
-    fourth.classList.add('another-class');
+  const three = document.querySelector('.three');
+  three.classList.toggle('three_done');
+  const four = document.querySelector('.four');
+  if (four.classList.containes('.some-class')) {
+    four.classList.add('another-class');
   }
 }
