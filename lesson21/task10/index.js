@@ -7,5 +7,3 @@ export function finishForm() {
   inputLogin.type = 'text';
   formEl.prepend(inputLogin);
 }
-
-console.log(finishForm());
