@@ -9,10 +9,10 @@ function listOfTarget(text, color) {
 
 const divTargetGrey = listOfTarget.bind(null, 'div', 'grey');
 const divTargetGreen = listOfTarget.bind(null, 'div', 'green');
-const pTargetGrey = listOfTarget.bind(null, 'div', 'grey');
-const pTargetGreen = listOfTarget.bind(null, 'div', 'green');
-const spanTargetGrey = listOfTarget.bind(null, 'div', 'grey');
-const spanTargetGreen = listOfTarget.bind(null, 'div', 'green');
+const pTargetGrey = listOfTarget.bind(null, 'p', 'grey');
+const pTargetGreen = listOfTarget.bind(null, 'p', 'green');
+const spanTargetGrey = listOfTarget.bind(null, 'span', 'grey');
+const spanTargetGreen = listOfTarget.bind(null, 'span', 'green');
 
 function attachHandlers() {
   divElem.addEventListener('click', divTargetGrey, true);
