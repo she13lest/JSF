@@ -15,12 +15,12 @@ const spanTargetGrey = listOfTarget.bind(null, 'span', 'grey');
 const spanTargetGreen = listOfTarget.bind(null, 'span', 'green');
 
 function attachHandlers() {
-  divElem.addEventListener('click', divTargetGrey, true);
   divElem.addEventListener('click', divTargetGreen);
-  pElem.addEventListener('click', pTargetGrey, true);
+  divElem.addEventListener('click', divTargetGrey, true);
   pElem.addEventListener('click', pTargetGreen);
-  spanElem.addEventListener('click', spanTargetGrey, true);
+  pElem.addEventListener('click', pTargetGrey, true);
   spanElem.addEventListener('click', spanTargetGreen);
+  spanElem.addEventListener('click', spanTargetGrey, true);
 }
 attachHandlers();
 
@@ -30,14 +30,14 @@ clearBtn.addEventListener('click', () => {
 });
 
 const attachHandlersBtn = document.querySelector('.attach-handlers-btn');
-attachHandlersBtn.addEventListener('click', () => attachHandlers);
+attachHandlersBtn.addEventListener('click', () => attachHandlers());
 
 const removeHandlersBtn = document.querySelector('.remove-handlers-btn');
 removeHandlersBtn.addEventListener('click', () => {
-  divElem.removeEventListener('click', divTargetGrey, true);
   divElem.removeEventListener('click', divTargetGreen);
-  pElem.removeEventListener('click', pTargetGrey, true);
+  divElem.removeEventListener('click', divTargetGrey, true);
   pElem.removeEventListener('click', pTargetGreen);
-  spanElem.removeEventListener('click', spanTargetGrey, true);
+  pElem.removeEventListener('click', pTargetGrey, true);
   spanElem.removeEventListener('click', spanTargetGreen);
+  spanElem.removeEventListener('click', spanTargetGrey, true);
 });
