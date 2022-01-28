@@ -39,10 +39,13 @@ const formEl = document.querySelector('.login-form');
 
 const onFormSubmit = event => {
   event.preventDefault();
-  const formData = [...new FormData(formEl)].reduce((acc, [field, value]) => ({
-    ...acc,
-    [field]: value,
-  }));
+  const formData = [...new FormData(formEl)].reduce(
+    (acc, [name, password]) => ({
+      ...acc,
+      [name]: password,
+    }),
+    {}
+  );
 
   alert(JSON.stringify(formData));
 };
