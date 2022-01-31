@@ -1,3 +1,7 @@
+const taskInputEl = document.querySelector('.task-input');
+const btnEl = document.querySelector('.btn');
+const listElem = document.querySelector('.list');
+
 const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
@@ -5,8 +9,6 @@ const tasks = [
   { text: 'Visit doctor', done: true },
   { text: 'Buy meat', done: true },
 ];
-
-const listElem = document.querySelector('.list');
 
 const renderTasks = tasksList => {
   const tasksElems = tasksList
@@ -31,4 +33,18 @@ const renderTasks = tasksList => {
 
 renderTasks(tasks);
 
-// put your code here
+const addNewTask = () => {
+  if (!taskInputEl.value) {
+    return;
+  }
+
+  const newTaskEl = {
+    text: taskInputEl.value,
+    done: false,
+    id: Date.now(),
+  };
+  tasks.push(newTaskEl);
+  renderTasks(tasks);
+};
+
+btnEl.addEventListener('click', addNewTask);
