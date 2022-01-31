@@ -11,13 +11,15 @@ const tasks = [
 ];
 
 const renderTasks = tasksList => {
+  listElem.innerHTML = '';
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }) => {
+    .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
+      checkbox.setAttribute('data-id', id);
       checkbox.checked = done;
       checkbox.classList.add('list__item-checkbox');
       if (done) {
@@ -47,4 +49,9 @@ const addNewTask = () => {
   renderTasks(tasks);
 };
 
+const checkedchange = () => {
+  renderTasks(tasks);
+};
+
 btnEl.addEventListener('click', addNewTask);
+listElem.addEventListener('click', checkedchange);
