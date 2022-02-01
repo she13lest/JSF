@@ -1,13 +1,13 @@
 const taskInputEl = document.querySelector('.task-input');
-const btnEl = document.querySelector('.btn');
+const btnEl = document.querySelector('.create-task-btn');
 const listElem = document.querySelector('.list');
 
 const tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
+  { text: 'Buy milk', done: false, id: 1 },
+  { text: 'Pick up Tom from airport', done: false, id: 2 },
+  { text: 'Visit party', done: false, id: 3 },
+  { text: 'Visit doctor', done: true, id: 4 },
+  { text: 'Buy meat', done: true, id: 5 },
 ];
 
 const renderTasks = tasksList => {
@@ -49,9 +49,20 @@ const addNewTask = () => {
   renderTasks(tasks);
 };
 
-const checkedchange = () => {
+const handleChange = (event) => {
+  const isCheckBox = event.target.type === 'checkbox';
+  if (!isCheckBox) {
+    return;
+  }
+
+  tasks.forEach((el) => {
+    const changeDoneEl = el;
+    if (changeDoneEl.id === +event.target.dataset.id) {
+      changeDoneEl.done = !changeDoneEl.done;
+    }
+  });
   renderTasks(tasks);
 };
 
 btnEl.addEventListener('click', addNewTask);
-listElem.addEventListener('click', checkedchange);
+listElem.addEventListener('click', handleChange);
