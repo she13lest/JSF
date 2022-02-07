@@ -5,9 +5,7 @@ localStorage.setItem('name', JSON.stringify('Violine'));
 localStorage.setItem('number', JSON.stringify(23));
 localStorage.setItem('again', JSON.stringify(true));
 
-// console.log(JSON.parse(localStorage.getItem('number')));
-
-export function getLocalStorageDate() {
+export function getLocalStorageData() {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     let newValue;
     try {
@@ -22,4 +20,4 @@ export function getLocalStorageDate() {
   }, {});
 }
 
-console.log(getLocalStorageDate());
+console.log(getLocalStorageData());
