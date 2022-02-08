@@ -10,12 +10,12 @@ export function getLocalStorageData() {
     let newValue;
     try {
       newValue = JSON.parse(value);
-    } catch (e) {
+    } catch(e) {
       newValue = value;
     }
     return {
       ...acc,
-      [key]: JSON.parse(value),
+      [key]: newValue,
     };
   }, {});
 }
