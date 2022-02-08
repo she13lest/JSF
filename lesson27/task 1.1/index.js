@@ -21,3 +21,4 @@ export function getLocalStorageData() {
 }
 
 console.log(getLocalStorageData());
+console.log(getLocalStorageData());
