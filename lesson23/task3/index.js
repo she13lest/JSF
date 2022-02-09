@@ -1,6 +1,6 @@
 const taskInputEl = document.querySelector('.task-input');
 const btnEl = document.querySelector('.create-task-btn');
-const listElem = document.querySelector('.list');
+const listEl = document.querySelector('.list');
 
 const tasks = [
   { text: 'Buy milk', done: false, id: 1 },
@@ -11,26 +11,26 @@ const tasks = [
 ];
 
 const renderTasks = tasksList => {
-  listElem.innerHTML = '';
+  listEl.innerHTML = '';
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done, id }) => {
-      const listItemElem = document.createElement('li');
-      listItemElem.classList.add('list__item');
+      const listItemEl = document.createElement('li');
+      listItemEl.classList.add('list__item');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.setAttribute('data-id', id);
       checkbox.checked = done;
       checkbox.classList.add('list__item-checkbox');
       if (done) {
-        listItemElem.classList.add('list__item_done');
+        listItemEl.classList.add('list__item_done');
       }
-      listItemElem.append(checkbox, text);
+      listItemEl.append(checkbox, text);
 
-      return listItemElem;
+      return listItemEl;
     });
 
-  listElem.append(...tasksElems);
+  listEl.append(...tasksElems);
 };
 
 renderTasks(tasks);
@@ -49,13 +49,13 @@ const addNewTask = () => {
   renderTasks(tasks);
 };
 
-const handleChange = (event) => {
+const handleChange = event => {
   const isCheckBox = event.target.type === 'checkbox';
   if (!isCheckBox) {
     return;
   }
 
-  tasks.forEach((el) => {
+  tasks.forEach(el => {
     const changeDoneEl = el;
     if (changeDoneEl.id === +event.target.dataset.id) {
       changeDoneEl.done = !changeDoneEl.done;
@@ -65,4 +65,4 @@ const handleChange = (event) => {
 };
 
 btnEl.addEventListener('click', addNewTask);
-listElem.addEventListener('click', handleChange);
+listEl.addEventListener('click', handleChange);
