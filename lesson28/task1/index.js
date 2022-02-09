@@ -26,6 +26,3 @@ function calc(initial) {
     return calculator;
 }
 
-const result = calc(16).add(6).subtract(3).mult(2).div(56).result()
-
-console.log(result)
