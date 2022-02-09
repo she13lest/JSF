@@ -1,4 +1,4 @@
-function calc(initial) {
+export function calc(initial) {
     let result = initial;
 
     const calculator = {
