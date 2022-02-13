@@ -1,4 +1,4 @@
-function shmoment(date) {
+export function shmoment(date) {
     const result = new Date(date);
 
     const changingDate = {
