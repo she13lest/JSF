@@ -22,19 +22,19 @@ export function shmoment(date) {
     },
     subtract(type, value) {
         if (type === 'years') {
-            result.setFullYear(result.getFullYear() + value);
+            result.setFullYear(result.getFullYear() - value);
         } else if (type === 'months') {
-            result.setMonth(result.getMonth() + value);
+            result.setMonth(result.getMonth() - value);
         } else if (type === 'days') {
-            result.setDate(result.getDate() + value);
+            result.setDate(result.getDate() - value);
         } else if (type === 'hours') {
-          result.setHours(result.getHours() + value);
+          result.setHours(result.getHours() - value);
         } else if (type === 'minutes') {
-          result.setMinutes(result.getMinutes() + value);
+          result.setMinutes(result.getMinutes() - value);
         } else if (type === 'seconds') {
-          result.setSeconds(result.getSeconds() + value);
+          result.setSeconds(result.getSeconds() - value);
         } else if (type === 'milliseconds') {
-          result.setMilliseconds(result.getMilliseconds() + value);
+          result.setMilliseconds(result.getMilliseconds() - value);
         } return this;
         }, 
         result() {
