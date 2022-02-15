@@ -19,5 +19,5 @@ export const pinger = (count, period) => {
 };
 
 
-// pinger(5, 100);
+pinger(5, 1000);
 pinger(7, 150);
