@@ -28,5 +28,3 @@ const resultPromise = addImage(imgSrc);
 resultPromise.then(data => console.log(data));
 
 resultPromise.catch(error => console.log(error));
-
-console.log(resultPromise);
