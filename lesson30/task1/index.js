@@ -1,5 +1,5 @@
 const imgSrc =
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
+  'https://p.11bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
 
 export const addImage = imgSrc => {
   const p = new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ export const addImage = imgSrc => {
       };
       
       const onErrorImg = () => {
-        reject(new Error('Image load is failed...'));
+        reject(new Error('Image load is failed'));
       };
     
     imgElem.addEventListener('load', onLoadImg);
@@ -24,5 +24,9 @@ export const addImage = imgSrc => {
     return p;
 };
 
-const result = addImage(imgSrc)
-console.log(result);
+const resultPromise = addImage(imgSrc);
+resultPromise.then(data => console.log(data));
+
+resultPromise.catch(error => console.log(error));
+
+console.log(resultPromise);
