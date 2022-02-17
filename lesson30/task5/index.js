@@ -1,3 +1,5 @@
+import { addImage } from './addImage.js';
+
 export const addImageV2 = url => {
   // put your code here
 };
