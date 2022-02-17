@@ -20,12 +20,12 @@ userDataPromise.then((userData) => {
   console.log(userData);
 });
 
-/*
- * подпишитесь на успешное выполнение промиса userDataPromise
- * используйте метод .then
- * в обработчике промиса (ф-ция внутри .then() ) выведите в консоль строку 'My name is Tom. I am 17 years old'
- * Tom и 17 достаньте с данных, которые приходят в ф-цию onSuccess
- */
+
+//  подпишитесь на успешное выполнение промиса userDataPromise
+//  используйте метод .then
+//  в обработчике промиса (ф-ция внутри .then() ) выведите в консоль строку 'My name is Tom. I am 17 years old'
+//  Tom и 17 достаньте с данных, которые приходят в ф-цию onSuccess
+ 
 
 userDataPromise.then(data => {
     const { name, age } = data;
