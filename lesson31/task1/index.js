@@ -15,7 +15,7 @@ export const requestUserData = userId => {
         resolve({
           name: 'John',
           age: 17,
-          userId: `userId777`,
+          userId: 'userId777',
           email: `${userId}`,
         });
       }, 1000);
@@ -24,9 +24,8 @@ export const requestUserData = userId => {
 
   return request;
 };
-let userId;
 
 requestUserData('someNum44')
-  .then(data => console.log(data));
+//   .then(data => console.log(data));
   // .catch (error => console.log(error));
-//   .finally(() => console.log('finally'));
+.finally(() => console.log('finally'));
