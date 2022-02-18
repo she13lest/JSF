@@ -24,9 +24,3 @@ export const requestUserData = userId => {
 
   return request;
 };
-let userId;
-
-requestUserData(userId)
-  .then(data => console.log(data));
-  // .catch (error => console.log(error));
-//   .finally(() => console.log('finally'));
