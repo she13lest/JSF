@@ -24,6 +24,7 @@ export const requestUserData = userId => {
 
   return request;
 };
+let userId;
 
 requestUserData(userId)
   .then(data => console.log(data));
