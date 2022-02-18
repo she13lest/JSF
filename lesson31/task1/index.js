@@ -8,7 +8,7 @@ export const requestUserData = userId => {
   const request = new Promise((resolve, reject) => {
     if (userId === 'broken') {
       setTimeout(() => {
-        reject(new Error('User not found'));
+          reject(new Error('User not found'));
       }, 500);
     } else {
       setTimeout(() => {
@@ -16,7 +16,7 @@ export const requestUserData = userId => {
           name: 'John',
           age: 17,
           userId: 'userId777',
-          email: `${userId}`,
+          email: `${userId}@gromcode.com`,
         });
       }, 1000);
     }
@@ -25,7 +25,7 @@ export const requestUserData = userId => {
   return request;
 };
 
-requestUserData('someNum44')
-//   .then(data => console.log(data));
-  // .catch (error => console.log(error));
-.finally(() => console.log('finally'));
+// requestUserData('someNum44')
+// .then(data => console.log(data));
+// .catch (error => console.log(error));
+// .finally(() => console.log('finally'));
