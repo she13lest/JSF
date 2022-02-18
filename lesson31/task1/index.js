@@ -25,7 +25,7 @@ export const requestUserData = userId => {
   return request;
 };
 
-requestUserData('broken')
-  // .then(data => console.log(data));
+requestUserData(userId)
+  .then(data => console.log(data));
   // .catch (error => console.log(error));
-  .finally(() => console.log('finally'));
+//   .finally(() => console.log('finally'));
