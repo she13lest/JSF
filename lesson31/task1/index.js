@@ -1,9 +1,3 @@
-'use strict';
-
-/**
- * @param {string} userId
- * @return {promise}
- */
 export const requestUserData = userId => {
   const request = new Promise((resolve, reject) => {
     if (userId === 'broken') {
@@ -15,8 +9,8 @@ export const requestUserData = userId => {
         resolve({
           name: 'John',
           age: 17,
-          userId: 'userId777',
-          email: `${userId}@gromcode.com`,
+          userId,
+          email: `${userId}`,
         });
       }, 1000);
     }
