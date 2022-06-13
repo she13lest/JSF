@@ -1,8 +1,9 @@
-import { renderTasks } from './renderer.js';
-import { getItem, setItem } from './storage.js';
+import { renderTasks } from "./renderer.js";
+import { getItem, setItem } from "./storage.js";
+import { createTask, getTasksList } from "./tasksGateway.js";
 
-export function onClickAdd() {
-  const taskInputElem = document.querySelector('.task-input');
+export const onCreateTask = () => {
+  const taskInputElem = document.querySelector(".task-input");
 
   const text = taskInputElem.value;
 
@@ -10,17 +11,19 @@ export function onClickAdd() {
     return;
   }
 
-  taskInputElem.value = '';
-  const tasks = getItem('tasksList') || [];
+  taskInputElem.value = "";
 
-  const newTasksList = tasks.concat({
+  const newTask = {
     text,
     done: false,
     date: new Date().toISOString(),
-    id: Date.now(),
-  });
+    id: Math.random().toString(),
+  };
 
-  setItem('tasksList', newTasksList);
-
-  renderTasks(tasks);
-}
+  createTask(newTask)
+    .then(() => getTasksList())
+    .then((newTasksList) => {
+      setItem("tasksList", newTasksList);
+      renderTasks();
+    });
+};
