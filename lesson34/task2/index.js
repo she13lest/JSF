@@ -39,7 +39,7 @@ getUsersList().then((users) => {
   console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
 });
 
-getUserById("2").then((userData) => {
+getUserById("3").then((userData) => {
   console.log(userData); // {'id':'2', 'firstName':'Ara' ... }
 });
 
@@ -65,6 +65,6 @@ updateUser("1", updatedUserData).then(() => {
   console.log("User updated");
 });
 
-deleteUser("2").then(() => {
+deleteUser("3").then(() => {
   console.log("User updated");
 });
