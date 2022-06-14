@@ -34,7 +34,7 @@ export function updateUser(userId, userData) {
   });
 }
 
-// // examples
+// examples
 // getUsersList().then((users) => {
 //   console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
 // });
@@ -65,6 +65,6 @@ export function updateUser(userId, userData) {
 //   console.log("User updated");
 // });
 
-// deleteUser("9").then(() => {
+// deleteUser("6").then(() => {
 //   console.log("User updated");
 // });
