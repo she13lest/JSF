@@ -34,12 +34,12 @@ export function updateUser(userId, userData) {
   });
 }
 
-// examples
-getUsersList().then((users) => {
-  console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
-});
+// // examples
+// getUsersList().then((users) => {
+//   console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
+// });
 
-// getUserById("3").then((userData) => {
+// getUserById("5").then((userData) => {
 //   console.log(userData); // {'id':'2', 'firstName':'Ara' ... }
 // });
 
@@ -61,10 +61,10 @@ getUsersList().then((users) => {
 //   age: 17,
 // };
 
-// updateUser("1", updatedUserData).then(() => {
+// updateUser("10", updatedUserData).then(() => {
 //   console.log("User updated");
 // });
 
-// deleteUser("3").then(() => {
+// deleteUser("9").then(() => {
 //   console.log("User updated");
 // });
