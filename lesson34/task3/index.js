@@ -1,20 +1,21 @@
-const baseUrl = "https://62a863cfa89585c17713652f.mockapi.io/api/v1/usersForm";
+const baseUrl = "https://62aafc0ea62365888bd1753c.mockapi.io/api/v2/usersObj";
 
 const formElem = document.querySelector(".login-form");
 const buttonElem = document.querySelector(".submit-button");
 
 const sendUserData = (userData) => {
   return fetch(baseUrl, {
-    methid: "POST",
+    method: "POST",
     headers: {
-      "content-Type": "application/json;charset=utf-8",
+      "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(userData),
   });
 };
 
 const onCreateNewUser = () => {
-  const newUserObj = Object.fromEntries(new FormData(inputElem));
+  const newUserObj = Object.fromEntries(new FormData(formElem));
+  console.log(newUserObj);
 
   return sendUserData(newUserObj)
     .then((response) => response.json())
@@ -23,6 +24,7 @@ const onCreateNewUser = () => {
       formElem.reset();
     });
 };
+console.log(onCreateNewUser());
 
 const onChange = () => {
   const isValidForm = formElem.reportValidity();
