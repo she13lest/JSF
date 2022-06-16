@@ -15,7 +15,6 @@ const sendUserData = (userData) => {
 
 const onCreateNewUser = () => {
   const newUserObj = Object.fromEntries(new FormData(formElem));
-  console.log(newUserObj);
 
   return sendUserData(newUserObj)
     .then((response) => response.json())
