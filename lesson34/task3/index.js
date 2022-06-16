@@ -29,7 +29,6 @@ const onChange = () => {
   const isValidForm = formElem.reportValidity();
   if (isValidForm) {
     buttonElem.removeAttribute("disabled");
-    buttonElem.setAttribute("enabled");
   } else {
     buttonElem.setAttribute("disabled", true);
   }
