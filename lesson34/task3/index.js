@@ -13,7 +13,9 @@ const sendUserData = (userData) => {
   });
 };
 
-const onCreateNewUser = () => {
+const onCreateNewUser = (e) => {
+  e.preventDefault();
+
   const newUserObj = Object.fromEntries(new FormData(formElem));
 
   return sendUserData(newUserObj)
@@ -23,7 +25,7 @@ const onCreateNewUser = () => {
       formElem.reset();
     });
 };
-console.log(onCreateNewUser());
+// console.log(onCreateNewUser());
 
 const onChange = () => {
   const isValidForm = formElem.reportValidity();
