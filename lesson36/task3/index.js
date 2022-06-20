@@ -18,7 +18,8 @@ const fetchUser = async (userId) => {
 
 export const getUsersBlogs = (users) => {
   const usersPromise = users.map((item) => {
-    return fetchUser(item);
+    const result = fetchUser(item).then((res) => res.blog);
+    return result;
   });
   const res = Promise.all(usersPromise);
   return res;
