@@ -36,7 +36,6 @@ export const createListItem = ({ text, done, id }) => {
   deleteBtnElem.classList.add("list-item-delete-btn");
 
   listItemElem.append(checkbox, textElem, deleteBtnElem);
-
   return listItemElem;
 };
 
