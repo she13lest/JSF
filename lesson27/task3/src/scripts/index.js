@@ -1,20 +1,11 @@
 import { renderTasks } from "./renderer.js";
 import { initToDoListHandlers } from "./todoList.js";
-import { getTasksList } from "./tasksGateway.js";
-import { setItem } from "./storage.js";
+import { createTask, getTasksList } from "./tasksGateway.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getTasksList().then((tasksList) => {
-    setItem("tasksList", tasksList);
-    renderTasks();
+  getTasksList().then((newTasksList) => {
+    renderTasks(newTasksList);
   });
 
   initToDoListHandlers();
 });
-
-const onStorageChange = (e) => {
-  if (e.key === "tasksList") {
-    renderTasks();
-  }
-};
-window.addEventListener("storage", onStorageChange);

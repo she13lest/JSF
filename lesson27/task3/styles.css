@@ -31,7 +31,7 @@ body {
   width: 100%;
 }
 
-.list__item {
+.list-item {
   display: flex;
   align-items: center;
   height: 40px;
@@ -41,19 +41,19 @@ body {
   padding: 8px;
 }
 
-.list__item_done {
+.list-item_done {
   opacity: 0.7;
 }
 
-.list-item-text {
+/* .list-item-text {
   text-decoration: line-through;
-}
+} */
 
-.list__item:last-child {
+.list-item:last-child {
   margin-bottom: 0;
 }
 
-.list__item-checkbox {
+.list-item__checkbox {
   margin-right: 8px;
 }
 
@@ -79,7 +79,7 @@ body {
   flex: 1;
 }
 
-.list-item-delete-btn {
+.list-item_delete-btn {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -96,6 +96,6 @@ body {
   text-align: center;
   opacity: 0.7;
 }
-.list-item-delete-btn:before {
+.list-item__delete-btn:before {
   content: "+";
 }

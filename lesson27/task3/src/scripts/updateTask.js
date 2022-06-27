@@ -1,34 +1,31 @@
 import { renderTasks } from "./renderer.js";
-import { getItem, setItem } from "./storage.js";
-import { updateTask } from "./tasksGateway.js";
+import { updateTask, deleteTask, getTasksList } from "./tasksGateway.js";
 
 const onDelete = (event) => {
-  const parent = event
-    .closest(".list-item")
-    .querySelector(`input[type="checkbox"]`);
-  const taskId = parent.dataset.id;
+  const isDelete = event.target.classList.contains("list-item__delete-btn");
+
+  if (!isDelete) {
+    return;
+  }
+  const taskId = event.target.dataset.id;
 
   deleteTask(taskId)
-    .then(() => getTasksLists())
+    .then(() => getTasksList())
     .then((newTasksList) => {
-      setItem("tasksList", newTasksList);
-      renderTasks();
+      renderTasks(newTasksList);
     });
 };
 
-export function onClickToggle(event) {
-  const isCheckBox = event.target.type === "checkbox";
+export const onClickToggle = (event) => {
+  const isCheckBox = event.target.classList.contains("list-item__checkbox");
+
   if (!isCheckBox) {
     return;
-  } else if (target.classList.contains("list-item-delete-btn")) {
-    onDelete(event);
   }
 
-  const tasks = getItem("tasksList");
-  const { text, createData } = tasks.find((task) => task.id === taskId);
-  const done = event.target.checked;
-
   const taskId = +event.target.dataset.id;
+
+  const done = event.target.checked;
 
   const updatedTask = {
     text,
@@ -40,7 +37,17 @@ export function onClickToggle(event) {
   updateTask(taskId, updatedTask)
     .then(() => getTasksList())
     .then((newTasksList) => {
-      setItem("tasksList", newTasksList);
-      renderTasks();
+      renderTasks(newTasksList);
     });
-}
+};
+
+export const onClickTask = (event) => {
+  const isCheckBox = event.target.classList.contains("list-item__checkbox");
+  const isDelete = event.target.classList.contains("list-item__delete-btn");
+
+  if (isCheckBox) {
+    onClickToggle(event);
+  } else if (isDelete) {
+    onDelete(event);
+  }
+};

@@ -1,4 +1,4 @@
-import { getItem } from "./storage.js";
+const listElem = document.querySelector(".list");
 
 function compareTasks(a, b) {
   if (a.done - b.done !== 0) {
@@ -6,9 +6,9 @@ function compareTasks(a, b) {
   }
 
   if (a.done) {
-    return new Date(b.date) - new Date(a.date);
+    return new Date(b.finishDate) - new Date(a.finishDate);
   }
-  return new Date(b.date) - new Date(a.date);
+  return new Date(b.createDate) - new Date(a.createDate);
 }
 
 const createCheckbox = ({ done, id }) => {
@@ -16,32 +16,32 @@ const createCheckbox = ({ done, id }) => {
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("data-id", id);
   checkbox.checked = done;
-  checkbox.classList.add("list__item-checkbox");
+  checkbox.classList.add("list-item__checkbox");
   return checkbox;
 };
 
-export const createListItem = ({ text, done, id }) => {
+const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement("li");
-  listItemElem.classList.add("list__item");
-  const checkbox = createCheckbox({ done, id });
+  listItemElem.classList.add("list-item", "list__item");
+
+  const checkboxElem = createCheckbox({ done, id });
   if (done) {
-    listItemElem.classList.add("list__item_done");
+    listItemElem.classList.add("list-item__done");
   }
 
   const textElem = document.createElement("span");
-  textElem.classList.add("list-item-text");
+  textElem.classList.add("list-item__text");
   textElem.textContent = text;
 
   const deleteBtnElem = document.createElement("button");
-  deleteBtnElem.classList.add("list-item-delete-btn");
+  deleteBtnElem.classList.add("list-item__delete-btn");
+  deleteBtnElem.setAttribute("data-id", id);
 
-  listItemElem.append(checkbox, textElem, deleteBtnElem);
+  listItemElem.append(checkboxElem, textElem, deleteBtnElem);
   return listItemElem;
 };
 
-export const renderTasks = () => {
-  const listElem = document.querySelector(".list");
-  const tasks = getItem("tasksList") || [];
+export const renderTasks = (tasks) => {
   listElem.innerHTML = "";
   const tasksElems = tasks.sort(compareTasks).map(createListItem);
 
