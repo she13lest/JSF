@@ -28,8 +28,6 @@ export const onClickToggle = (event) => {
   const done = event.target.checked;
 
   const updatedTask = {
-    text,
-    createData,
     done,
     finishDate: done ? new Date().toISOString() : null,
   };
